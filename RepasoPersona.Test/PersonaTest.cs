@@ -53,5 +53,11 @@ namespace RepasoPersona.Test
             var ex = Assert.Throws<InvalidOperationException>(() => Pepito.Debitar(1000));
             Assert.Equal("El monto supera al efectivo.", ex.Message);
         }
+        [Fact]
+        public void debitar()
+        {
+            var ex = Assert.Throws<ArgumentException>(() => Pepito.Debitar (0));
+            Assert.Equal("El monto tiene que ser mayor a cero.", ex.Message);
+        }
     }
 }
